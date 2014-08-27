@@ -19,6 +19,10 @@ app.controller('LoginController', ['$scope', '$rootScope', '$location', 'loginSe
             });
         };
 
+        $scope.$on(AUTH_EVENTS.notAuthenticated, function() {
+            $location.path('/login');
+        });
+
         $rootScope.currentUser = null;
         $rootScope.userRoles = USER_ROLES;
         $rootScope.isAuthorized = loginService.isAuthorized;

@@ -29,7 +29,7 @@ app.factory('loginService', function ($q, $http, Session) {
 
     return authService;
     /*return{
-        *//*login: function (user, scope) {
+        login: function (user, scope) {
          $http.post('http://localhost:8888/DailyRegsService/user.php', user)
          .then(function (msg) {
          console.log(msg.data);
@@ -41,7 +41,7 @@ app.factory('loginService', function ($q, $http, Session) {
          scope.msgtxt = 'Error, check your credentials';
          }
          });
-         }*//*
+         }
         login: function (user, scope) {
             $http.post('auth/login', user)
                 .then(function (msg) {
