@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aad0d48-d5df-4b72-a8ff-a83e41124941" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/directives/KPIDirective.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/controllers/RankingController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/angular-mocks.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/bootstrap-datepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/datepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/http-auth-interceptor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/partials/tpl/kpi.tpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/moment.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/filters/percentage.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/controllers/MainController" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/partials/login.tpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/services/api.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/directives/loginDirective.js" afterPath="$PROJECT_DIR$/js/directives/LoginDirective.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/DataService.js" afterPath="$PROJECT_DIR$/js/services/DataService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/LoginController.js" afterPath="$PROJECT_DIR$/js/controllers/LoginController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/angular-route.min.js" afterPath="$PROJECT_DIR$/lib/angular-route.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/LoginService.js" afterPath="$PROJECT_DIR$/js/services/LoginService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.html" afterPath="$PROJECT_DIR$/views/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/config/prod.js" afterPath="$PROJECT_DIR$/js/config/prod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/ranking.html" afterPath="$PROJECT_DIR$/views/ranking.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DailyRegs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,11 +31,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="690">
-                  <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
+                <state vertical-scroll-proportion="0.43450883" vertical-offset="0" max-vertical-offset="794">
+                  <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -66,10 +51,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/main.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.47229218" vertical-offset="1725" max-vertical-offset="3960">
+                <state vertical-scroll-proportion="-15.625" vertical-offset="1725" max-vertical-offset="3960">
                   <caret line="140" column="63" selection-start-line="140" selection-start-column="63" selection-end-line="140" selection-end-column="63" />
                   <folding />
                 </state>
@@ -83,9 +68,15 @@
           <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2383863" vertical-offset="645" max-vertical-offset="1725">
-                  <caret line="56" column="28" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="28" />
-                  <folding />
+                <state vertical-scroll-proportion="0.5782396" vertical-offset="517" max-vertical-offset="1335">
+                  <caret line="101" column="62" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
+                  <folding>
+                    <element signature="e#265#515#0" expanded="false" />
+                    <element signature="e#551#765#0" expanded="false" />
+                    <element signature="e#804#1024#0" expanded="false" />
+                    <element signature="e#1229#1485#0" expanded="false" />
+                    <element signature="e#1516#1572#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -93,8 +84,8 @@
           <file leaf-file-name="LoginController.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/controllers/LoginController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-                  <caret line="24" column="33" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="33" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+                  <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -103,8 +94,8 @@
           <file leaf-file-name="LoginService.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/services/LoginService.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
-                  <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+                <state vertical-scroll-proportion="-13.269231" vertical-offset="60" max-vertical-offset="1200">
+                  <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -163,9 +154,9 @@
         <option value="$PROJECT_DIR$/lib/angular-mocks.js" />
         <option value="$PROJECT_DIR$/partials/tpl/login.tpl.html" />
         <option value="$PROJECT_DIR$/js/controllers/ApplicationController.js" />
+        <option value="$PROJECT_DIR$/views/main.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/controllers/LoginController.js" />
-        <option value="$PROJECT_DIR$/views/main.html" />
         <option value="$PROJECT_DIR$/js/services/LoginService.js" />
         <option value="$PROJECT_DIR$/js/app.js" />
       </list>
@@ -173,7 +164,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1442" />
-    <option name="y" value="-436" />
+    <option name="y" value="-439" />
     <option name="width" value="1827" />
     <option name="height" value="975" />
   </component>
@@ -269,6 +260,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DailyRegs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DailyRegs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -507,7 +512,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1442" y="-436" width="1827" height="975" extended-state="0" />
+    <frame x="1442" y="-439" width="1827" height="975" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32945284" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -873,14 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="690">
-          <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/RankingController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09168704" vertical-offset="0" max-vertical-offset="1050">
@@ -891,33 +888,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47229218" vertical-offset="1725" max-vertical-offset="3960">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="1725" max-vertical-offset="3960">
           <caret line="140" column="63" selection-start-line="140" selection-start-column="63" selection-end-line="140" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/LoginService.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.43450883" vertical-offset="0" max-vertical-offset="794">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/LoginController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/LoginService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.269231" vertical-offset="60" max-vertical-offset="1200">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2383863" vertical-offset="645" max-vertical-offset="1725">
-          <caret line="56" column="28" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="28" />
-          <folding />
+        <state vertical-scroll-proportion="0.5782396" vertical-offset="517" max-vertical-offset="1335">
+          <caret line="101" column="62" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
+          <folding>
+            <element signature="e#265#515#0" expanded="false" />
+            <element signature="e#551#765#0" expanded="false" />
+            <element signature="e#804#1024#0" expanded="false" />
+            <element signature="e#1229#1485#0" expanded="false" />
+            <element signature="e#1516#1572#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

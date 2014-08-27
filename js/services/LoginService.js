@@ -23,12 +23,8 @@ app.factory('loginService', function ($q, $http, Session) {
         if (!angular.isArray(authorizedRoles)) {
             authorizedRoles = [authorizedRoles];
         }
-        if (authService.isAuthenticated() && authorizedRoles.indexOf(Session.userRole) !== -1) {
-            return authService.isAuthenticated() && authorizedRoles.indexOf(Session.userRole) !== -1;
-        }
-        else {
-            return $q.reject('Not Authenticated');
-        }
+        return (authService.isAuthenticated() &&
+            authorizedRoles.indexOf(Session.userRole) !== -1);
     };
 
     return authService;

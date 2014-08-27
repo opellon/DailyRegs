@@ -6,14 +6,19 @@ var app = angular.module('DailyRegs', ['ngRoute','ngMockE2E']);
 app.config(['$routeProvider', 'USER_ROLES', function ($routeProvider, USER_ROLES) {
     $routeProvider.when('/login', {
         templateUrl: 'views/login.html',
-        controller: 'LoginController'
+        controller: 'LoginController',
+        resolve: {
+            authorizedRoles: function () {
+                return [USER_ROLES.all, USER_ROLES.admin, USER_ROLES.guest];
+            }
+        }
     });
     $routeProvider.when('/main', {
         templateUrl: 'views/main.html',
         controller: 'MainController',
         resolve: {
-            'auth' : function (loginService) {
-                return loginService.isAuthorized(USER_ROLES.all);
+            authorizedRoles: function () {
+                return [USER_ROLES.admin];
             }
         }
     });
@@ -21,8 +26,8 @@ app.config(['$routeProvider', 'USER_ROLES', function ($routeProvider, USER_ROLES
         templateUrl: 'views/ranking.html',
         controller: 'RankingController',
         resolve: {
-            'auth' : function (loginService) {
-                return loginService.isAuthorized(USER_ROLES.all);
+            authorizedRoles: function () {
+                return [USER_ROLES.guest];
             }
         }
     });
@@ -46,7 +51,6 @@ app.constant('AUTH_EVENTS', {
 app.constant('USER_ROLES', {
     all: '*',
     admin: 'admin',
-    editor: 'editor',
     guest: 'guest'
 });
 
@@ -59,7 +63,7 @@ app.config(function ($httpProvider) {
     ]);
 });
 
-app.factory('AuthInterceptor', function ($rootScope, $q,AUTH_EVENTS) {
+app.factory('AuthInterceptor', function ($rootScope, $q, AUTH_EVENTS) {
     return {
         responseError: function (response) {
             $rootScope.$broadcast({
@@ -73,15 +77,29 @@ app.factory('AuthInterceptor', function ($rootScope, $q,AUTH_EVENTS) {
     };
 });
 
+app.run(function ($rootScope, AUTH_EVENTS, loginService) {
+    $rootScope.$on('$routeChangeStart', function (event, next) {
+        var authorizedRoles = next.resolve.authorizedRoles();
+        if (!loginService.isAuthorized(authorizedRoles)) {
+            event.preventDefault();
+            if (loginService.isAuthenticated()) {
+                // user is not allowed
+                $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
+            } else {
+                // user is not logged in
+                $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
+            }
+        }
+    });
+});
 
-
-app.run(function($httpBackend) {
+app.run(function ($httpBackend) {
 
     var authorized = false;
     $httpBackend.whenPOST('/login').respond(function(method, url, data) {
-        if(jQuery.parseJSON(data).username == 'jsilva' && jQuery.parseJSON(data).password == '123'){
+        if (jQuery.parseJSON(data).username == 'jsilva' && jQuery.parseJSON(data).password == '123'){
             authorized = true;
-            var res = {id: 1, user: {id:'jsilva', role:'*'}};
+            var res = {id: 1, user: {id:'jsilva', role: 'admin'}};
             return [200, res];
         }
         else{
@@ -90,19 +108,10 @@ app.run(function($httpBackend) {
         }
 
     });
-    $httpBackend.whenPOST('auth/logout').respond(function(method, url, data) {
+    $httpBackend.whenPOST('/logout').respond(function (method, url, data) {
         authorized = false;
         return [200];
     });
-
-
-    $httpBackend.whenPOST('data/public').respond(function(method, url, data) {
-        return [200,'I have received and processed your data [' + data + '].'];
-    });
-    $httpBackend.whenPOST('data/protected').respond(function(method, url, data) {
-        return authorized ? [200,'This is confidential [' + data + '].'] : [401];
-    });
-
     //otherwise
 
     $httpBackend.whenGET(/.*/).passThrough();
