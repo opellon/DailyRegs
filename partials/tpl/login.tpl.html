@@ -1,0 +1,30 @@
+<div>
+    <header id="logoContainer">
+        <div id="mfLogo">
+            <img class="center-block logoLogin" src="img/USLogoTransparent.png"/><br/>
+            <img class="center-block nameLogin" src="img/USNameTransparent.png">
+        </div>
+    </header>
+    <div class="row">
+        <div id="urbanLogo" class="row">
+            <img id="companyLogo" class="center-block" src="img/urbanLogo.png" width="120px" height="23px"/>
+        </div>
+    </div>
+    <div id="body" class="row">
+        <div class="col-sm-offset-4 col-sm-4 col-xs-12">
+            <br/>
+            <div class="form-group input-group col-xs-10 col-xs-offset-1">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                <input type="text" class="form-control" placeholder="username" required ng-model="credentials.username">
+            </div>
+            <div class="form-group input-group col-xs-10 col-xs-offset-1">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                <input type="password" class="form-control" placeholder="password" required ng-model="credentials.password">
+            </div>
+            <div class="form-group col-xs-10 col-xs-offset-1">
+                <button id="btnLogin" class="btn btn-default full-width" ng-disabled="form1.$invalid" ng-click="login(credentials)">login</button>
+                <p>{{msgtxt}}</p>
+            </div>
+        </div>
+    </div>
+</div>

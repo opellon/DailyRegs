@@ -1,0 +1,258 @@
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker({pickTime: false});
+    });
+</script>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/main">
+                <img src="img/USLogoTransparent.png" class="pull-left logo">
+                <img src="img/USNameTransparent.png" class="pull-left logoname hidden-xs">
+            </a>
+
+            <div class="filterButton pull-right">
+                <button class="btn-primary btn-filter glyphicon glyphicon-calendar" data-toggle="modal"
+                        data-target="#modalCalendar"></button>
+            </div>
+            <div class="filterButton pull-right">
+                <button class="btn-primary btn-filter glyphicon glyphicon-filter" data-toggle="modal"
+                        data-target="#modalFilter"></button>
+            </div>
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#/main">Cuadro de Mando</a>
+                </li>
+                <li>
+                    <a href="#/ranking">Ranking</a>
+                </li>
+                <li>
+                    <a href="#/login">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!--Modal Filter-->
+<div id="modalFilter" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Filtro</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="form-group col-sm-4">
+                        <label for="ccmonth">Canal</label>
+                        <select class="form-control" id="ccmonth" ng-model="selectedChannel" ng-change="applyFilter()"
+                                ng-options="item for item in channels">
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="ccyear">Geografía</label>
+                        <select class="form-control" id="ccyear" ng-model="selectedGeography" ng-change="applyFilter()"
+                                ng-options="item for item in geography">
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="ccyear">Marca</label>
+                        <select class="form-control" id="ccyear" ng-model="selectedBrand" ng-change="applyFilter()"
+                                ng-options="item for item in brands">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="applyFilter()">Apply</button>-->
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal Calendar-->
+<div id="modalCalendar" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Periodo</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="form-group col-sm-6 col-sm-offset-3">
+                        <label for="ccmonth">Periodo</label>
+
+                        <div class="well">
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="applyFilter()">Apply</button>-->
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Header -->
+    <div class="row nopadding">
+        <div class="col-lg-12">
+            <h1>{{selectedGeography}}
+                <small>{{selectedChannel}}</small>
+            </h1>
+            <div ng-if="currentUser">Welcome, {{ currentUser.id }}</div>
+            <br />
+            <h6>Última actualización: {{updateDate | date:'dd/MM/yyyy'}}</h6>
+        </div>
+    </div>
+
+    <!-- /.row -->
+    <hr>
+    <div class="row nopadding" style="text-align: -webkit-center;">
+        <h5>MERCADO</h5>
+    </div>
+    <div class="row kpi" style="text-align: -webkit-center;">
+        <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
+            <div class="kpiSquare">
+                <div class="top">
+                    <div class="title">
+                        <span>Mercado dia</span>
+                    </div>
+                    <div class="kpititle">
+                        <div class="numbers" style="padding-top: 7px;">
+                            <span ng-class="applyColor(kpi1.kpi11)">{{kpi1.kpi11 | number:2}}%</span>
+                        </div>
+                        <div class="icon">
+                            <span class="glyphicon" ng-class="applyArrow(kpi1.kpi12)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <p class="text">{{kpi1.kpi13 | number:0}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="kpiSquare">
+                <div class="top">
+                    <div class="title">
+                        <span>Mercado ACUM</span>
+                    </div>
+                    <div class="kpititle">
+                        <div class="numbers" style="padding-top: 7px;">
+                            <span ng-class="applyColor(kpi2.kpi21)">{{kpi2.kpi21 | number:2}}%</span>
+                        </div>
+                        <div class="icon">
+                            <span class="glyphicon" ng-class="applyArrow(kpi2.kpi22)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <p class="text">{{kpi2.kpi23 | number:0}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="text-align: -webkit-center;">
+        <h5>{{selectedBrand}}</h5>
+    </div>
+    <div class="row kpi" style="text-align: -webkit-center;">
+        <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
+            <div class="kpiSquare">
+                <div class="top">
+                    <div class="title">
+                        <span>Cuota dia</span>
+                    </div>
+                    <div class="kpititle">
+                        <div class="numbers">
+                            <span>{{kpi3.kpi31 | number:2}}</span>
+                            <br/>
+                            <span ng-class="applyColor(kpi3.kpi32)">{{kpi3.kpi32 | number:2}}%</span>
+                        </div>
+                        <div class="icon">
+                            <span class="glyphicon" ng-class="applyArrow(kpi3.kpi33)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <p class="text">{{kpi3.kpi34 | number:2}}%</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="kpiSquare">
+                <div class="top">
+                    <div class="title">
+                        <span>Cuota ACUM</span>
+                    </div>
+                    <div class="kpititle">
+                        <div class="numbers">
+                            <span>{{kpi4.kpi41 | number:2}}</span>
+                            <br/>
+                            <span ng-class="applyColor(kpi4.kpi42)">{{kpi4.kpi42 | number:2}}%</span>
+                        </div>
+                        <!--<div class="icon">
+                            <span class="glyphicon" ng-class="applyArrow(kpi4.kpi43)"></span>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="bottom">
+                    <span class="textAcum">{{kpi4.kpi43}}%</span>
+                    <br />
+                    <span class="textAcum">{{kpi4.kpi44}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Urban Science 2014</p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </footer>
+
+</div>

@@ -1,3 +1,9 @@
-/**
- * Created by jsilva on 25/07/14.
- */
+var config = config || {};
+
+config.production = {
+    app: 'DailyRegs-production',
+
+    analytics: {
+        url: 'http://localhost/app'
+    }
+};
